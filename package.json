@@ -1,0 +1,28 @@
+{
+  "name": "fis-postprocessor-velocity",
+  "version": "0.0.1",
+  "description": "A processor for fis to compile velocity template after standard compiling.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vicerwang/fis-postprocessor-velocity"
+  },
+  "keywords": [
+    "fis",
+    "velocity"
+  ],
+  "author": {
+    "name": "vic"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vicerwang/fis-postprocessor-velocity/issues"
+  },
+  "homepage": "https://github.com/vicerwang/fis-postprocessor-velocity",
+  "dependencies": {
+    "velocityjs": "^0.7.1"
+  }
+}
