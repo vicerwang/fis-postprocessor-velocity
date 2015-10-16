@@ -1,6 +1,6 @@
 {
   "name": "fis-postprocessor-velocity",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A processor for fis to compile velocity template after standard compiling.",
   "main": "index.js",
   "scripts": {

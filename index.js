@@ -5,6 +5,9 @@ var _ = fis.util;
 
 module.exports = function (content, file, settings) {
 
+	var mockPath = file.realpath + ".js";
+	var mock = getMockContent(mockPath);
+
 	var root = fis.project.getProjectPath();
 	if(settings.root) {
 		if(path.isAbsolute(settings.root)) {
@@ -15,24 +18,18 @@ module.exports = function (content, file, settings) {
 		}
 	}
 
-	var commonMockPath;
 	if(settings.commonMock) {
+		var commonMockPath;
 		if(path.isAbsolute(settings.commonMock)) {
 			commonMockPath = settings.commonMock;
 		}
 		else {
 			commonMockPath = path.join(root, settings.commonMock);
 		}
-	}
-	else {
-		commonMockPath = path.join(root, "mock/common/common.js");
-	}
-	var commonMock = getMockContent(commonMockPath);
 
-	var mockPath = file.realpath + ".js";
-	var mock = getMockContent(mockPath);
-
-	mock = _.merge(commonMock, mock);
+		var commonMock = getMockContent(commonMockPath);
+		mock = _.merge(commonMock, mock);
+	}
 
 	return Velocity.render(content, mock);
 }

@@ -11,14 +11,14 @@ fis.match("**/page/**.html", {
 ```javascript
 root
  ├ page
- | ├ index 
- | | | ├ index.html 
+ | ├ index
+ | | | ├ index.html
  | | | ├ index.css
  | | | ├ index.js
  | | | └ index.html.js
  ├ widget
- | ├ header 
- | | | ├ header.html 
+ | ├ header
+ | | | ├ header.html
  | | | ├ header.css
  | | | └ header.js
  ├ mock
@@ -53,7 +53,7 @@ module.exports = {
     </tr>
     <tr>
       <td>commonMock</td>
-      <td>"mock/common/common.js"</td>
+      <td>""</td>
     </tr>
 </table>
 
