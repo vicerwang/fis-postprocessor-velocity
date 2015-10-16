@@ -4,7 +4,9 @@ A processor for fis to compile velocity template after standard compiling.
 ### Usage
 ```javascript
 fis.match("**/page/**.html", {
-    postprocessor: fis.plugin("velocity")
+    postprocessor: fis.plugin("velocity", {
+    	commonMock: 'mock/common/common.js'
+    })
 });
 ```
 
