@@ -1,6 +1,6 @@
 {
   "name": "fis-postprocessor-velocity",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A processor for fis to compile velocity template after standard compiling.",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/vicerwang/fis-postprocessor-velocity",
   "dependencies": {
-    "velocityjs": "^0.7.1"
+    "velocity": "^0.7.2"
   }
 }

@@ -1,4 +1,4 @@
-var Velocity = require("velocityjs");
+var Engine = require( 'velocity' ).Engine;
 var path = require("path");
 var fs = require("fs");
 var _ = fis.util;
@@ -31,7 +31,12 @@ module.exports = function (content, file, settings) {
 		mock = _.merge(commonMock, mock);
 	}
 
-	return Velocity.render(content, mock);
+	var engine = new Engine( {
+	    template: content,
+	    cache: false
+	} );
+
+	return engine.render(mock);
 }
 
 function getMockContent(path) {
