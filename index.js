@@ -6,7 +6,7 @@ var _ = fis.util;
 module.exports = function (content, file, settings) {
 
 	var mockPath = file.realpath + ".js";
-	var mock = getMockContent(mockPath);
+	var mock = getMockContent(mockPath, file);
 
 	var root = fis.project.getProjectPath();
 	if(settings.root) {
@@ -27,7 +27,7 @@ module.exports = function (content, file, settings) {
 			commonMockPath = path.join(root, settings.commonMock);
 		}
 
-		var commonMock = getMockContent(commonMockPath);
+		var commonMock = getMockContent(commonMockPath, file);
 		mock = _.merge(commonMock, mock);
 	}
 
@@ -39,12 +39,14 @@ module.exports = function (content, file, settings) {
 	return engine.render(mock);
 }
 
-function getMockContent(path) {
+function getMockContent(path, file) {
 	var mock = {};
 
 	if(fs.existsSync(path)) {
 		mock = require(path);
 		delete require.cache[path];
+
+		file.cache.addDeps(path);
 	}
 
 	return mock;
